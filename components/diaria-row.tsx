@@ -13,12 +13,21 @@ interface DiariaRowProps {
 
 export function DiariaRow({ diaria, onClick }: DiariaRowProps) {
   const isFolga = diaria.status === "folga"
+  const isPrevisto = diaria.status === "previsto"
   const isTrabalhado = diaria.status === "trabalhado"
   const isPending = diaria.pendente_anterior
   const isFechado = diaria.fechamento_id !== null
   const isPago = diaria.pago
 
   function getStatusBadge() {
+    if (isPrevisto){
+      return (
+          <Badge className="bg-success text-success-foreground text-xs">
+            Previsto
+          </Badge>
+      )
+    }
+
     if (isPago) {
       return (
         <Badge className="bg-success text-success-foreground text-xs">

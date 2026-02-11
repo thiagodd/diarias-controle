@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     .map((day) => ({
       user_id: user.id,
       data: format(day, "yyyy-MM-dd"),
-      status: isWeekend(day) ? ("folga" as const) : ("trabalhado" as const),
+      status: isWeekend(day) ? ("folga" as const) : ("previsto" as const),
       valor: isWeekend(day) ? 0 : defaultRate,
     }))
 

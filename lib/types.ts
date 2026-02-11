@@ -1,4 +1,4 @@
-export type DiariaStatus = "trabalhado" | "falta" | "feriado" | "folga"
+export type DiariaStatus = "previsto" | "trabalhado" | "falta" | "feriado" | "folga"
 
 export interface Diaria {
   id: string

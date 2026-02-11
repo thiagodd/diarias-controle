@@ -33,7 +33,7 @@ export function calculateTotals(
 ): MonthTotals {
   // Previsto: weekday (status = trabalhado when generated) non-pending
   const previstoItems = diarias.filter(
-    (d) => d.status === "trabalhado" && !d.pendente_anterior,
+    (d) => d.status === "previsto" && !d.pendente_anterior,
   )
   const previsto_dias = previstoItems.length
   const previsto_valor = previstoItems.reduce((sum, d) => sum + Number(d.valor), 0)
